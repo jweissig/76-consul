@@ -46,13 +46,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "%v %s\n", rttl.Key, rttl.Value)
 
 	// get services
-	services, metainfo, err := client.Health().Service("web-helloapp", "global", true, &api.QueryOptions{})
+	services, metainfo, err := client.Health().Service("redis-cache", "global", true, &api.QueryOptions{})
 
 	if err != nil {
 		fmt.Printf("error getting instances from Consul: %v", err)
 	}
 
-	fmt.Fprintf(w, "\nInstances from Consul (%v):\n", len(services))
+	fmt.Fprintf(w, "\nRedis instances from Consul (%v):\n", len(services))
 
 	for _, service := range services {
 		fmt.Fprintf(w, "%v:%v\n", service.Service.Address, service.Service.Port)
