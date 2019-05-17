@@ -1,5 +1,7 @@
 # Consul Demo
 
+Demo app to grab Service instances + KV data from Consul.
+
 [#76 - Consul (screencast)](https://sysadmincasts.com/episodes/76-consul)
 
 ##### Build go app for linux (from mac)
